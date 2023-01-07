@@ -1,0 +1,69 @@
+# YAML has  key:value pair stored value
+---
+"orange" : "I like oranges"
+1: "something written here"
+---
+# List
+- apple
+
+---
+Cities:
+ - New Delhi
+ - Pune
+ - Mumbai
+---
+cities: [New Delhi, Dehradun, Mumbai]
+---
+
+# String variables
+myself: Calvin Hobbes
+
+job: |
+ School kid
+ student of Mrs. Wormwood
+
+
+# Map data structure can be defined using :
+# !!map
+name : Calvin
+info :
+ age : 5
+ proffession : School student
+ best friend : Hobbes
+
+---
+# If one key has multiple values then we can use pairs
+profession : !!pairs
+ - job : student
+ - job : teacher
+---
+professions : !!pairs [job: football-player, job: musician]
+---
+# Unique values use sets
+names : !!set
+ ? Calvin
+ ? Abhsihek
+ ? Hobbes
+
+
+# Dictionaries !!omap
+peopleRe: !!omap
+  - Calvin:
+     full name: Calvin Hobbes
+     age : 5
+     height : 54
+     category : Human child
+  - Hobbes:
+     full name : Hobbes the Tiger
+     age : 4
+     height: 256
+     category: loving Animal beloved
+
+# reusing properties using anchors
+likings: &like
+ fav fruit : oranges
+ dislikes : papaya
+
+person1:
+ name : Abhsiehk
+ <<: *like
